@@ -13,9 +13,13 @@
 <header class="navbar bg-primary">
     <section class="navbar-section px-2">
         <a href="{% url 'home' %}" class="navbar-brand mr-2 text-bold  text-secondary px-2">App</a>
-        <a href="#" class="btn btn-link  text-secondary">Link</a>
-        <a href="#" class="btn btn-link  text-secondary">Link</a>
-        <a href="#" class="btn btn-link  text-secondary">Link</a>
+        <a href="{% url 'cargar' %}" class="btn btn-link  text-secondary">Cargar BBDD</a>
+        <a href="{% url 'loadRS' %}" class="btn btn-link  text-secondary">Cargar RS</a>
+        <a href="{% url 'anime_list' %}" class="btn btn-link  text-secondary">Listar animes formato</a>
+        <a href="{% url 'animes_mas_vistos' %}" class="btn btn-link  text-secondary">Listar animes mas vistos</a>
+        <a href="{% url 'recomendar' %}" class="btn btn-link  text-secondary">Recomendar a usuario</a>
+
+
     </section>
 </header>
 

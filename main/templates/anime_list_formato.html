@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Formulario{% endblock %}
+
+{% block content %}
+
+    <h2>Seleccione un formato:</h2>
+    <form method="post" action="{% url 'anime_list' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if animes %}
+        <h2>Animes con más de 5 episodios ordenados por número de episodios:</h2>
+        <ul>
+            {% for anime in animes %}
+                <li>{{ anime.titulo }} - Géneros: {{ anime.generos }} - Número de episodios: {{ anime.num_episodios }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

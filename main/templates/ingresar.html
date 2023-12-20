@@ -1,0 +1,11 @@
+
+{% block titulo %} 
+	Identifiquese para Poblar la Base de Datos
+{% endblock %}   
+
+{% block contenido %} 
+    	<form id="formulario" class="form" method="post" action=''>{% csrf_token %}
+    		{{formulario}}
+    		<button class="btn btn-primary mt-2" type="submit">Popular BBDD</button>
+    	</form>
+{% endblock %}

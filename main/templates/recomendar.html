@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Formulario{% endblock %}
+
+{% block content %}
+
+    <h2>Seleccione un formato:</h2>
+    <form method="post" action="{% url 'recomendar' %}">
+        {% csrf_token %}
+        {{ formulario.as_p }}
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if animes %}
+        <h2>Recomendaciones: </h2>
+        <ul>
+            {% for anime in items %}
+                <li>{{ anime.titulo }} - Géneros: {{ anime.generos }} - Número de episodios: {{ anime.num_episodios }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
